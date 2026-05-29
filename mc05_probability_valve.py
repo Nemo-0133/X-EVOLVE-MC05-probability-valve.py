@@ -1,3 +1,17 @@
+"""
+Module: MC-05 Probability Valve
+Description:
+A lightweight interception valve mounted directly on the output layer of Large Language Models.
+Based on "Controlled Disturbance Logic," this module asynchronously intercepts Top-K Logits 
+when high entropy (decision divergence) or specific semantic trigger nodes are detected. 
+It routes these logits to an external SDE (Stochastic Differential Equation) engine for 
+evaluation, effectively breaking the model out of local optima and mitigating hallucination deadlocks.
+
+Dependencies:
+- numpy
+- asyncio
+- time
+"""
 import time
 import numpy as np
 import asyncio
